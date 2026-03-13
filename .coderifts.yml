@@ -1,0 +1,20 @@
+# CodeRifts configuration
+version: 1
+
+# Path to your OpenAPI spec file
+spec_path: openapi.yaml
+
+# Comment mode: full (default) or compact
+comment_mode: full
+
+# Block merge on breaking changes
+block_on_breaking: true
+
+# Branch risk profiles
+branch_profiles:
+  - pattern: "main"
+    risk_tolerance: strict
+  - pattern: "hotfix/*"
+    budget_multiplier: 2
+  - pattern: "experiment/*"
+    block_on_breaking: false
